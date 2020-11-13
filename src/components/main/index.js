@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => {
+const Main = () => {
     return (
         <main>
             <h1>Dashboard title</h1>
@@ -103,4 +103,6 @@ export default () => {
             </p>
         </main>
     );
-};
+}
+
+export default Main;

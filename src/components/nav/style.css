@@ -1,5 +1,7 @@
 
 .navbar {
+    width: 4rem;
+    height: 100vh;
     position: fixed;
     background-color: var(--bg-primary);
     transition: width 600ms ease;
@@ -26,17 +28,17 @@
 .nav-link {
     display: flex;
     align-items: center;
-    height: 5rem;
+    height: 4rem;
     color: var(--text-primary);
     text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
+    filter: grayscale(100%) opacity(0.5);
     transition: var(--transition-speed);
 }
 
 .nav-link:hover {
     filter: grayscale(0%) opacity(1);
     background: var(--bg-secondary);
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
 }
 
 .link-text {
@@ -44,23 +46,10 @@
     margin-left: 1rem;
 }
 
-.nav-link svgext {
+.nav-link svg {
     width: 2rem;
     min-width: 2rem;
     margin: 0 1.5rem;
-}
-
-.fa-primary {
-    color: #36ae3a;
-}
-
-.fa-secondary {
-    color: #357839;
-}
-
-.fa-primary,
-.fa-secondary {
-    transition: var(--transition-speed);
 }
 
 .logo {
