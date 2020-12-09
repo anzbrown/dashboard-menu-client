@@ -1,15 +1,13 @@
-import React from "react";
-import Nav from './components/nav/index'
+import React from 'react';
+import Sidebar from './components/Sidebar/index';
 import Main from './components/main/index';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Nav/>
-      <Main/>
-    </div>
-  );
+export default function App() {
+    return (
+        <div className="App">
+            <Sidebar />
+            <Main />
+        </div>
+    );
 }
-
-export default App;

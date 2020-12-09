@@ -1,8 +1,12 @@
 import axios from 'axios';
 
-export default {
+const api = {
     getConfiguration: () =>
-        axios('/resources/menus', {
+        axios('http://localhost:8080/api/menu', {
             method: 'GET',
-        })
+            headers: {
+                'x-tenant-id': 'test',
+            },
+        }),
 };
+export default api;
