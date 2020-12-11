@@ -1,19 +1,24 @@
-:root {
-  font-size: 16px;
-  font-family: 'Open Sans', serif;
-  --text-primary: #b6b6b6;
-  --text-secondary: #5b4a92;
-  --text-tertiary: #9478f3;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed: 400ms;
+@import './sass/variables';
+@import './sass/themes';
+
+.app {
+  @include themify() {
+    background-color: themed(bgPrimary);
+    color: themed(bgSecondary);
+    font-size: $font-size;
+    font-family: $font-family;
+    --transition-speed: $transition-speed;
+  }
 }
 
 body {
-  color: black;
-  background-color: white;
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::-webkit-scrollbar {
@@ -49,6 +54,14 @@ main {
     flex-direction: row;
   }
 
+  .nav-item:first-child {
+    display: none;
+  }
+
+  .nav-item:last-child {
+    margin-top: inherit;
+  }
+
   .nav-link {
     justify-content: center;
   }
@@ -61,9 +74,11 @@ main {
 /* Large screens */
 @media only screen and (min-width: 600px) {
   .navbar {
-    top: 0;
-    width: 5rem;
-    height: 100vh;
+    @include themify() {
+      width: 5rem;
+      height: 100vh;
+      position: fixed;
+    }
   }
 
   .navbar:hover {

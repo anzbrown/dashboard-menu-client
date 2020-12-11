@@ -1,0 +1,28 @@
+@import '../../sass/variables';
+@import '../../sass/themes';
+
+.navbar {
+    @include themify() {
+        background-color: themed(bgPrimary);
+        transition: width 600ms ease;
+    }
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar:hover .nav-item:first-child svg {
+    transform: rotate(-180deg);
+    transition: $transition-speed;
+}
+.navbar .nav-item:first-child svg {
+    transform: rotate(0deg);
+    transition: $transition-speed;
+}
