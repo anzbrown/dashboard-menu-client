@@ -1,3 +1,10 @@
+## TODO:
+
+* persist theme selection in local storage so that it's persisted across page loads per user.
+* create component for list header instead of specific css pseudo selectors 
+* create component for list footer to handle theme switching and eventually logout
+* integrate login authentication from an authentication-as-a-service provider
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
