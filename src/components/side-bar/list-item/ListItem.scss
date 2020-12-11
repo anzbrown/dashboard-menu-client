@@ -39,6 +39,14 @@
     }
 }
 
+.nav-link:hover :first-child {
+    @include themify($themes) {
+        filter: grayscale(0%) opacity(1);
+        background: themed(bgSecondary);
+        color: themed(textTertiary);
+    }
+}
+
 .nav-link:hover {
     @include themify($themes) {
         filter: grayscale(0%) opacity(1);
@@ -56,11 +64,4 @@
     width: 2rem;
     min-width: 2rem;
     margin: 0 1.5rem;
-}
-
-.logo-text {
-    display: inline;
-    position: absolute;
-    left: -999px;
-    transition: $transition-speed;
 }
