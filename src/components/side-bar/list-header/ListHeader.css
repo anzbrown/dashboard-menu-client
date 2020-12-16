@@ -1,0 +1,57 @@
+.navbar:hover .nav-header svg {
+    transform: rotate(-180deg);
+    transition: var(--transition-speed);
+}
+.navbar .nav-header svg {
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+}
+
+.nav-header {
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+}
+
+.nav-header svg {
+    transform: rotate(0deg);
+}
+
+.header-link {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.5);
+    transition: var(--transition-speed);
+}
+
+.header-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-tertiary);
+}
+
+.header-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-tertiary);
+}
+
+.header-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.header-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { initialState, reducer } from './reducer';
 import { getMenuConfiguration } from './helper';
 import ListItem from './list-item/ListItem';
-import './Sidebar.scss';
+import './Sidebar.css';
+import ListHeader from './list-header/ListHeader';
 
-export default function Sidebar(props) {
+export default function Sidebar() {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const { toggleTheme } = props;
 
     useEffect(() => {
         getMenuConfiguration(dispatch);
@@ -16,9 +16,9 @@ export default function Sidebar(props) {
     return (
         <nav className="navbar">
             <ul className="navbar-nav">
+                <ListHeader icon={'faAngleDoubleRight'} />
                 {state.menu.map(item => (
                     <ListItem
-                        toggleTheme={toggleTheme}
                         key={item.text}
                         name={item.text}
                         icon={item.iconHint}

@@ -1,0 +1,22 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans', serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #5b4a92;
+  --text-tertiary: #9478f3;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --bg-main: #130d21;
+  --scroll-bar-track: #1e1e24;
+  --transition-speed: 400ms;
+}
+
+:root [class="theme-light"] {
+  --text-primary: black;
+  --text-secondary: #ef6c23;
+  --text-tertiary: #ef9463;
+  --bg-primary: lightgrey;
+  --bg-secondary: grey;
+  --bg-main: white;
+  --scroll-bar-track: #1e1e24;
+}

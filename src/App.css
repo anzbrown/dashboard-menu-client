@@ -1,16 +1,3 @@
-@import './sass/variables';
-@import './sass/themes';
-
-.app {
-  @include themify() {
-    background-color: themed(bgPrimary);
-    color: themed(bgSecondary);
-    font-size: $font-size;
-    font-family: $font-family;
-    --transition-speed: $transition-speed;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -26,16 +13,25 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: var(--scroll-bar-track);
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #5b4a92;
+  background: var(--text-secondary);
 }
 
 main {
   margin-left: 5rem;
   padding: 1rem;
+}
+
+.theme-switch__input:checked ~ body,
+.theme-switch__input:checked ~ label {
+  --text: white;
+}
+
+.theme-switch__input:checked ~ body {
+
 }
 
 /* Small screens */
@@ -54,14 +50,6 @@ main {
     flex-direction: row;
   }
 
-  .nav-item:first-child {
-    display: none;
-  }
-
-  .nav-item:last-child {
-    margin-top: inherit;
-  }
-
   .nav-link {
     justify-content: center;
   }
@@ -74,11 +62,9 @@ main {
 /* Large screens */
 @media only screen and (min-width: 600px) {
   .navbar {
-    @include themify() {
-      width: 5rem;
-      height: 100vh;
-      position: fixed;
-    }
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
   }
 
   .navbar:hover {
@@ -86,6 +72,9 @@ main {
   }
 
   .navbar:hover .link-text {
+    display: inline;
+  }
+  .navbar:hover .header-text {
     display: inline;
   }
 

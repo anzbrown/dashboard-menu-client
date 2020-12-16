@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as icons from '@fortawesome/free-solid-svg-icons';
-import './ListItem.scss';
+import './ListItem.css';
 
 export default function ListItem(props) {
     const { name, icon, url } = props;
