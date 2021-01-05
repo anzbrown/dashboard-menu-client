@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as icons from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import './ListHeader.css';
 
 export default function ListHeader(props) {
-    const { icon } = props;
+    const { toggleTheme } = props;
+
     return (
-        <li className="nav-header">
-            <a className="header-link">
+        <li className="nav-header" onClick={toggleTheme}>
+            <span className="header-link">
                 <span className="header-text">Dash</span>
-                <FontAwesomeIcon icon={icons[icon]} />
-            </a>
+                <FontAwesomeIcon icon={faAngleDoubleRight} />
+            </span>
         </li>
     );
 }
 ListHeader.propTypes = {
-    icon: PropTypes.string.isRequired,
+    toggleTheme: PropTypes.func.isRequired,
 };

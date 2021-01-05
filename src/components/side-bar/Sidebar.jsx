@@ -5,9 +5,11 @@ import { getMenuConfiguration } from './helper';
 import ListItem from './list-item/ListItem';
 import './Sidebar.css';
 import ListHeader from './list-header/ListHeader';
+import ListFooter from './list-footer/ListFooter';
 
-export default function Sidebar() {
+export default function Sidebar(props) {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const { toggleTheme } = props;
 
     useEffect(() => {
         getMenuConfiguration(dispatch);
@@ -16,7 +18,7 @@ export default function Sidebar() {
     return (
         <nav className="navbar">
             <ul className="navbar-nav">
-                <ListHeader icon={'faAngleDoubleRight'} />
+                <ListHeader toggleTheme={toggleTheme} />
                 {state.menu.map(item => (
                     <ListItem
                         key={item.text}
@@ -25,6 +27,7 @@ export default function Sidebar() {
                         url={item.url}
                     />
                 ))}
+                <ListFooter />
             </ul>
         </nav>
     );

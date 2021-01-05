@@ -17,6 +17,7 @@
     background: var(--bg-secondary);
     font-size: 1.5rem;
     letter-spacing: 0.3ch;
+    display: flex;
 }
 
 .nav-header svg {

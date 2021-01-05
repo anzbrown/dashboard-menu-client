@@ -6,10 +6,6 @@
     transform: rotate(0deg);
 }
 
-.nav-item:last-child {
-    margin-top: auto;
-}
-
 .nav-link {
     display: flex;
     align-items: center;

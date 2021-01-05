@@ -1,8 +1,7 @@
 ## TODO:
 
 * persist theme selection in local storage so that it's persisted across page loads per user.
-* create component for list header instead of specific css pseudo selectors 
-* create component for list footer to handle theme switching and eventually logout
+* fix theme switcher for scroll-bar
 * integrate login authentication from an authentication-as-a-service provider
 
 # Getting Started with Create React App

@@ -1,9 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
+  font-size: 16px;
+  font-family: 'Open Sans', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,21 +20,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--text-secondary);
-}
-
-main {
-  margin-left: 5rem;
-  padding: 1rem;
-}
-
-.theme-switch__input:checked ~ body,
-.theme-switch__input:checked ~ label {
-  --text: white;
-}
-
-.theme-switch__input:checked ~ body {
-
+  background: var(--scroll-bar-thumb);
 }
 
 /* Small screens */
@@ -42,7 +31,7 @@ main {
     height: 5rem;
   }
 
-  .logo {
+  .nav-header {
     display: none;
   }
 
@@ -73,18 +62,25 @@ main {
 
   .navbar:hover .link-text {
     display: inline;
+    flex: 1
   }
   .navbar:hover .header-text {
     display: inline;
+    flex: 1;
+  }
+  .navbar:hover svg {
+    flex: 1;
   }
 
-  .navbar:hover .logo svg
-  {
+  .navbar:hover .logo svg {
     margin-left: 11rem;
   }
 
-  .navbar:hover
-  {
+  .navbar:hover {
     left: 0;
+  }
+
+  .nav-item:last-child {
+    margin-top: auto;
   }
 }
