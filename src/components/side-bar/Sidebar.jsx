@@ -1,15 +1,13 @@
 import React, { useEffect, useReducer } from 'react';
-import PropTypes from 'prop-types';
 import { initialState, reducer } from './reducer';
 import { getMenuConfiguration } from './helper';
 import ListItem from './list-item/ListItem';
-import './Sidebar.css';
 import ListHeader from './list-header/ListHeader';
 import ListFooter from './list-footer/ListFooter';
+import './Sidebar.css';
 
-export default function Sidebar(props) {
+export default function Sidebar() {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const { toggleTheme } = props;
 
     useEffect(() => {
         getMenuConfiguration(dispatch);
@@ -18,7 +16,7 @@ export default function Sidebar(props) {
     return (
         <nav className="navbar">
             <ul className="navbar-nav">
-                <ListHeader toggleTheme={toggleTheme} />
+                <ListHeader />
                 {state.menu.map(item => (
                     <ListItem
                         key={item.text}
@@ -32,6 +30,3 @@ export default function Sidebar(props) {
         </nav>
     );
 }
-Sidebar.propTypes = {
-    toggleTheme: PropTypes.func,
-};
