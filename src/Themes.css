@@ -1,5 +1,6 @@
 :root {
   --transition-speed: 200ms;
+  --scroll-bar-track: #1e1e24;
 }
 
 .dark-theme {
@@ -9,7 +10,6 @@
   --bg-primary: #23232e;
   --bg-secondary: #141418;
   --bg-main: #130d21;
-  --scroll-bar-track: #1e1e24;
   --scroll-bar-thumb: #5b4a92;
 }
 
@@ -20,6 +20,5 @@
   --bg-primary: #8c8c8c;
   --bg-secondary: #606060;
   --bg-main: #dddddd;
-  --scroll-bar-track: #1e1e24;
   --scroll-bar-thumb: #ef6c23;
 }
