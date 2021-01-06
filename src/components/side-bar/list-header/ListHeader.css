@@ -7,6 +7,11 @@
     transition: var(--transition-speed);
 }
 
+.nav-header-item {
+    width: 100%;
+    cursor: pointer;
+}
+
 .nav-header {
     width: 100%;
     font-weight: bold;
@@ -32,12 +37,6 @@
     text-decoration: none;
     filter: grayscale(100%) opacity(0.5);
     transition: var(--transition-speed);
-}
-
-.header-link:hover {
-    filter: grayscale(0%) opacity(1);
-    background: var(--bg-secondary);
-    color: var(--text-tertiary);
 }
 
 .header-link:hover {

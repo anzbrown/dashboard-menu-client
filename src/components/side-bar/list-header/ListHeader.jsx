@@ -6,10 +6,9 @@ import './ListHeader.css';
 
 export default function ListHeader(props) {
     const { toggleTheme } = props;
-
     return (
         <li className="nav-header" onClick={toggleTheme}>
-            <span className="header-link">
+            <span className="header-link nav-header-item">
                 <span className="header-text">Dash</span>
                 <FontAwesomeIcon icon={faAngleDoubleRight} />
             </span>

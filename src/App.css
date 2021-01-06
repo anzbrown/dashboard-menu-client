@@ -72,9 +72,9 @@ body::-webkit-scrollbar-thumb {
     flex: 1;
   }
 
-  .navbar:hover .logo svg {
-    margin-left: 11rem;
-  }
+  /*.navbar:hover .logo svg {*/
+  /*  margin-left: 11rem;*/
+  /*}*/
 
   .navbar:hover {
     left: 0;

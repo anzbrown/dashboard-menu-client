@@ -1,6 +1,5 @@
 ## TODO:
 
-* persist theme selection in local storage so that it's persisted across page loads per user.
 * apply transition speed to rotation of list header svg and not colour transition 
 * integrate login authentication from an authentication-as-a-service provider
 
