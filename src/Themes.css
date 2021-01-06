@@ -1,5 +1,5 @@
 :root {
-  --transition-speed: 200ms;
+  --transition-speed: 200ms ease;
   --scroll-bar-track: #1e1e24;
 }
 
