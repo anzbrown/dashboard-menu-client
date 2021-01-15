@@ -8,5 +8,7 @@ const api = {
                 'x-tenant-id': 'test',
             },
         }),
+    getContent: paras =>
+        axios(`https://hipsum.co/api/?type=hipster-centric&paras=${paras}`),
 };
 export default api;
