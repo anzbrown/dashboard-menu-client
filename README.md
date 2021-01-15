@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/anzbrown/dashboard-menu-client/Node.js%20CI)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/anzbrown/dashboard-menu-client/Node.js%20CI)](https://github.com/anzbrown/dashboard-menu-client/actions?query=workflow%3A%22Node.js+CI%22)
 
 <a href="https://www.buymeacoffee.com/adambrown" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
