@@ -10,3 +10,5 @@ handlers:
   - url: /.*
     static_files: build/index.html
     upload: build/index.html
+env_variables:
+  REACT_APP_SERVICE_API: "https://snowflake-menu-service-dot-dashboard-menu-service.ew.r.appspot.com"

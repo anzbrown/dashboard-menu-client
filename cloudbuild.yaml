@@ -9,5 +9,7 @@ steps:
     entrypoint: npm
     args: [ "run", "build" ]
   - name: "gcr.io/cloud-builders/gcloud"
+    env:
+      - 'REACT_APP_SERVICE_API=https://snowflake-menu-service-dot-dashboard-menu-service.ew.r.appspot.com'
     args: [ "app", "deploy" ]
 timeout: "1600s"
