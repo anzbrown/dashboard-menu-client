@@ -4,3 +4,4 @@ dist/
 log/
 .idea/
 .env
+.env.local

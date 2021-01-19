@@ -1,5 +1,5 @@
 import React from 'react';
-import { toggleTheme } from '../../../helper';
+import { toggleTheme } from '../../../../helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import './ListHeader.css';
