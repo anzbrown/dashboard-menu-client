@@ -5,11 +5,12 @@
 ## TODO:
 
 * apply transition speed to rotation of list header svg and not colour transition 
-* integrate login authentication from an authentication-as-a-service provider
+* Write the REACT_APP secrets required for the app to a .env file in the prestart script so that the app will run in GAE
 
 ### Configuration
 This react app requires the following environment variables:
 
 | Parameter    	        | value 	            | Required 	| Description |
 |-----------------------|-----------------------|-----------|---------------|
+| GOOGLE_CLOUD_PROJECT  |                       | Yes       | The automatically provided value of the google cloud project when deployed in GAE. |
 | REACT_APP_SERVICE_API | http://localhost:8080 | Yes       | The location of the deployed backend to use. |
