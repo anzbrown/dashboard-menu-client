@@ -1,7 +1,6 @@
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 const { appendFile } = require('fs').promises;
-const fs = require('fs');
-const path = require('path');
+const { existsSync } = require('fs');
 const parent = `projects/${process.env.GOOGLE_CLOUD_PROJECT}`;
 
 // Instantiates a client
@@ -44,7 +43,7 @@ async function writeEnv(secrets) {
  * if the .env file already exists, don't list the secrets and generate a new file
  */
 async function index() {
-    if (!fs.existsSync(ENV_FILE)) {
+    if (!existsSync(ENV_FILE)) {
         const [secrets] = await listSecrets();
         await writeEnv(secrets);
     }
