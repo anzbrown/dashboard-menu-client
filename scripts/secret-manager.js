@@ -1,9 +1,12 @@
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 const { appendFile } = require('fs').promises;
+const fs = require('fs');
+const path = require('path');
 const parent = `projects/${process.env.GOOGLE_CLOUD_PROJECT}`;
 
 // Instantiates a client
 const client = new SecretManagerServiceClient();
+const ENV_FILE = '.env';
 
 /**
  * Use the GCP Secret Manager API to list all the secrets for the currently running project
@@ -29,14 +32,21 @@ async function writeEnv(secrets) {
             });
 
             const key = secret.name.substr(secret.name.indexOf('REACT_APP'));
-            const content = `${key}=${version.payload.data.toString()}`;
-            // WARNING: Do not print the secret in a production environment - this
-            // snippet is showing how to access the secret material.
-            await appendFile('.env', content, 'utf8');
+
+            // append a newline char after each entry to make a valid .env file
+            const content = `${key}=${version.payload.data.toString()}\n`;
+            await appendFile(ENV_FILE, content, 'utf8');
         }
     }
 }
 
-const [secrets] = await listSecrets();
-// TODO: if the .env file already exists, don't list the secrets and generate a new file
-await writeEnv(secrets);
+/**
+ * if the .env file already exists, don't list the secrets and generate a new file
+ */
+async function index() {
+    if (!fs.existsSync(ENV_FILE)) {
+        const [secrets] = await listSecrets();
+        await writeEnv(secrets);
+    }
+}
+index();
