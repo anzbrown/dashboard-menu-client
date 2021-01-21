@@ -37,6 +37,7 @@
   "scripts": {
     "lint": "eslint --fix .",
     "prestart": "node scripts/secret-manager.js",
+    "gcp-build": "node scripts/secret-manager.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

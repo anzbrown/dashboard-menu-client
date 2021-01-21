@@ -1,13 +1,6 @@
 dispatch:
-  # route API requests to the API service
-  # Default service serves the typical web resources and all static resources.
-  - url: "*/favicon.ico"
-    service: snowflake-client
-  - url: "*/static/*"
-    service: snowflake-client
-  - url: "*/manifest.json"
-    service: snowflake-client
-  - url: "*/logo*"
-    service: snowflake-client
   - url: "*/api/menu"
     service: snowflake-menu-service
+#  # GCP generated hostname defaults to client react app
+#  - url: "dashboard-menu-service.ew.r.appspot.com/"
+#    service: snowflake-client
