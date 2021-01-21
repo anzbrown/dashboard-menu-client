@@ -1,0 +1,4 @@
+dispatch:
+  # route API requests to the API service
+  - url: "*/api/menu"
+    service: snowflake-menu-service
