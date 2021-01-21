@@ -1,7 +1,7 @@
 import React from 'react';
-import { toggleTheme } from '../../../../helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { toggleTheme } from '../../../../helper';
 import './ListHeader.css';
 
 export default function ListHeader() {
