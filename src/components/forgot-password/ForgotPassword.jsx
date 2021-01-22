@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { Alert, Button, Form } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 
@@ -27,23 +26,23 @@ export default function ForgotPassword() {
 
     return (
         <div>
-            <h2 className="text-center mb-4">Reset Password</h2>
-            {error && <Alert variant="danger">{error}</Alert>}
-            {message && <Alert variant="success">{message}</Alert>}
-            <Form onSubmit={handleSubmit}>
-                <Form.Group id="email">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" ref={emailRef} required />
-                </Form.Group>
-                <Button disabled={loading} className="w-100" type="submit">
+            <h2>Reset Password</h2>
+            {error && <div>{error}</div>}
+            {message && <div>{message}</div>}
+            <form onSubmit={handleSubmit}>
+                <div id="email">
+                    <label>Email</label>
+                    <input type="email" ref={emailRef} required />
+                </div>
+                <button disabled={loading} type="submit">
                     Reset Password
-                </Button>
-            </Form>
+                </button>
+            </form>
             <div>
-                <Link to="/login">Login</Link>
+                <Link to="/web/login">Login</Link>
             </div>
             <div>
-                Need an account? <Link to="/signup">Sign up</Link>
+                Need an account? <Link to="/web/signup">Sign up</Link>
             </div>
         </div>
     );

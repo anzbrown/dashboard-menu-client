@@ -10,7 +10,7 @@ export default function ListFooter() {
 
     async function handleLogout() {
         await logout();
-        history.push('/login');
+        history.push('/web/login');
     }
 
     return (

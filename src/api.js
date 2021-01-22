@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const api = {
-    getConfiguration: () =>
+    getConfiguration: user =>
         axios('/api/menu', {
             method: 'GET',
             headers: {
-                'x-tenant-id': 'test',
+                'x-tenant-id': user,
             },
         }),
     getContent: paras =>

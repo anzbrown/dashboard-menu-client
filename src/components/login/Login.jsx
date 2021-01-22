@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { Alert, Button, Form } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -27,26 +26,26 @@ export default function Login() {
 
     return (
         <div>
-            <h2 className="text-center mb-4">Login</h2>
-            {error && <Alert variant="danger">{error}</Alert>}
-            <Form onSubmit={handleSubmit}>
-                <Form.Group id="email">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" ref={emailRef} required />
-                </Form.Group>
-                <Form.Group id="password">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" ref={passwordRef} required />
-                </Form.Group>
-                <Button disabled={loading} className="w-100" type="submit">
+            <h2>Login</h2>
+            {error && <div>{error}</div>}
+            <form onSubmit={handleSubmit}>
+                <div id="email">
+                    <label>Email</label>
+                    <input type="email" ref={emailRef} required />
+                </div>
+                <div id="password">
+                    <label>Password</label>
+                    <input type="password" ref={passwordRef} required />
+                </div>
+                <button disabled={loading} type="submit">
                     Login
-                </Button>
-            </Form>
+                </button>
+            </form>
             <div>
-                <Link to="/forgot-password">Forgot Password?</Link>
+                <Link to="/web/forgot-password">Forgot Password?</Link>
             </div>
             <div>
-                Need an account? <Link to="/signup">Sign up</Link>
+                Need an account? <Link to="/web/signup">Sign up</Link>
             </div>
         </div>
     );

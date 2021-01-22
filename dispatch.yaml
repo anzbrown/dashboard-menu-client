@@ -4,11 +4,7 @@ dispatch:
   # GCP generated hostname defaults to client react app
   - url: "dashboard-menu-service.ew.r.appspot.com/*"
     service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/login"
-    service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/signup"
-    service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/forgot-password"
+  - url: "dashboard-menu-service.ew.r.appspot.com/web/*"
     service: snowflake-client
   - url: "dashboard-menu-service.ew.r.appspot.com/static/*"
     service: snowflake-client

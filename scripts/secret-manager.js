@@ -48,7 +48,7 @@ async function index() {
         await writeEnv(secrets);
     } else {
         console.error(
-            `Please set GOOGLE_CLOUD_PROJECT environment variable to finish setup.`
+            'Please set GOOGLE_CLOUD_PROJECT environment variable to finish setup.'
         );
     }
 }
