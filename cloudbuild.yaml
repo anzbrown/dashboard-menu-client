@@ -8,8 +8,8 @@ steps:
   - name: node:12
     entrypoint: npm
     args: [ "run", "build" ]
-  - name: "gcr.io/cloud-builders/gcloud"
     env:
-      - 'REACT_APP_SERVICE_API=https://snowflake-menu-service-dot-dashboard-menu-service.ew.r.appspot.com'
+      - 'GOOGLE_CLOUD_PROJECT=$PROJECT_ID'
+  - name: "gcr.io/cloud-builders/gcloud"
     args: [ "app", "deploy" ]
 timeout: "1600s"

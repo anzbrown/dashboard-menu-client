@@ -10,7 +10,6 @@
 ### Configuration
 This react app requires the following environment variables:
 
-| Parameter    	        | value 	            | Required 	| Description |
+| Parameter    	        | value 	            | Required 	| Description   |
 |-----------------------|-----------------------|-----------|---------------|
 | GOOGLE_CLOUD_PROJECT  |                       | Yes       | The automatically provided value of the google cloud project when deployed in GAE. |
-| REACT_APP_SERVICE_API | http://localhost:8080 | Yes       | The location of the deployed backend to use. |
