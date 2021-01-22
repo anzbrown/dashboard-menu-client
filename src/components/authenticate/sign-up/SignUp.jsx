@@ -39,7 +39,7 @@ export default function SignUp() {
                 <div className="col">
                     <div>
                         <p className="center-text">Already have an account?</p>
-                        <Link className="btn" to="/web/login">
+                        <Link className="btn center-text" to="/web/login">
                             Login
                         </Link>
                     </div>

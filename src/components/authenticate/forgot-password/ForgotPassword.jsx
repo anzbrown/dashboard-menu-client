@@ -35,10 +35,10 @@ export default function ForgotPassword() {
                 {message && <div>{message}</div>}
                 <div className="col">
                     <div>
-                        <Link className="btn" to="/web/signup">
+                        <Link className="btn center-text" to="/web/signup">
                             Sign up
                         </Link>
-                        <Link className="btn" to="/web/login">
+                        <Link className="btn center-text" to="/web/login">
                             Login
                         </Link>
                     </div>

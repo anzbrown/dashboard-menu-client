@@ -70,18 +70,16 @@ export default function Login() {
                     </form>
                 </div>
             </div>
-            <div className="bottom-container">
-                <div className="row">
-                    <div className="col">
-                        <Link className="btn" to="/web/signup">
-                            Sign up
-                        </Link>
-                    </div>
-                    <div className="col">
-                        <Link className="btn" to="/web/forgot-password">
-                            Forgot Password?
-                        </Link>
-                    </div>
+            <div className="row">
+                <div className="col">
+                    <Link className="btn center-text" to="/web/signup">
+                        Sign up
+                    </Link>
+                </div>
+                <div className="col">
+                    <Link className="btn center-text" to="/web/forgot-password">
+                        Forgot Password?
+                    </Link>
                 </div>
             </div>
         </div>
