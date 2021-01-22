@@ -7,6 +7,7 @@
   --text-primary: #b6b6b6;
   --text-secondary: #5b4a92;
   --text-tertiary: #9478f3;
+  --text--placeholder: #ae97ff;
   --bg-primary: #23232e;
   --bg-secondary: #141418;
   --bg-main: #130d21;
@@ -17,6 +18,7 @@
   --text-primary: black;
   --text-secondary: #ef6c23;
   --text-tertiary: #ef9463;
+  --text--placeholder: #ffe2d3;
   --bg-primary: #8c8c8c;
   --bg-secondary: #606060;
   --bg-main: #dddddd;
