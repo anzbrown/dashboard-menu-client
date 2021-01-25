@@ -1,26 +1,61 @@
 import React, { useRef, useState } from 'react';
-import { useAuth } from '../../../contexts/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as icons from '@fortawesome/free-brands-svg-icons';
 import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../../../contexts/AuthContext';
 import '../authenticate.css';
 
 export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { login } = useAuth();
+    const { login, signInWithGoogle, signInWithFb } = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useHistory();
+
+    function startLogin() {
+        setError('');
+        setLoading(true);
+    }
+
+    function redirectToDashboard() {
+        history.push('/');
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
 
         try {
-            setError('');
-            setLoading(true);
+            startLogin();
             await login(emailRef.current.value, passwordRef.current.value);
+            redirectToDashboard();
+        } catch {
+            setError('Failed to log in');
+        }
+        setLoading(false);
+    }
+
+    async function signInFb(e) {
+        e.preventDefault();
+
+        try {
+            startLogin();
+            await signInWithFb();
+            redirectToDashboard();
             history.push('/');
+        } catch {
+            setError('Failed to log in');
+        }
+        setLoading(false);
+    }
+
+    async function signInGoogle(e) {
+        e.preventDefault();
+
+        try {
+            startLogin();
+            await signInWithGoogle();
+            redirectToDashboard();
         } catch {
             setError('Failed to log in');
         }
@@ -36,17 +71,25 @@ export default function Login() {
                 </div>
                 {error && <div>{error}</div>}
                 <div className="col">
-                    <a href="#" className="fb btn">
+                    <a
+                        href="#"
+                        className="fb btn center-text"
+                        onClick={signInFb}
+                    >
                         <FontAwesomeIcon icon={icons['faFacebookF']} />
-                        Login with Facebook
+                        <span>Login with Facebook</span>
                     </a>
-                    <a href="#" className="twitter btn">
+                    <a href="#" className="twitter btn center-text">
                         <FontAwesomeIcon icon={icons['faTwitter']} />
-                        Login with Twitter
+                        <span>Login with Twitter</span>
                     </a>
-                    <a href="#" className="google btn">
+                    <a
+                        href="#"
+                        className="google btn center-text"
+                        onClick={signInGoogle}
+                    >
                         <FontAwesomeIcon icon={icons['faGoogle']} />
-                        Login with Google
+                        <span>Login with Google</span>
                     </a>
                 </div>
                 <div className="col">

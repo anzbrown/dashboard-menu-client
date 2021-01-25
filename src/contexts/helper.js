@@ -1,4 +1,4 @@
-import { auth } from '../firebase';
+import { auth, fbAuthProvider, googleAuthProvider } from '../firebase';
 
 /**
  * firebase signup method
@@ -55,4 +55,20 @@ export async function updateEmail(email) {
  */
 export async function updatePassword(password) {
     return auth.currentUser.updatePassword(password);
+}
+
+/**
+ * sign in with google account
+ * @returns {Promise<firebase.auth.UserCredential>}
+ */
+export async function signInWithGoogle() {
+    return auth.signInWithPopup(googleAuthProvider);
+}
+
+/**
+ * sign in with fb account
+ * @returns {Promise<firebase.auth.UserCredential>}
+ */
+export async function signInWithFb() {
+    return auth.signInWithPopup(fbAuthProvider);
 }

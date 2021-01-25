@@ -20,4 +20,21 @@ const firebaseApp = firebase.initializeApp({
     measurementId: REACT_APP_FIREBASE_MEASUREMENT_ID,
 });
 export const auth = firebase.auth();
+auth.useDeviceLanguage();
+
+// FB Auth provider config
+export const fbAuthProvider = new firebase.auth.FacebookAuthProvider();
+fbAuthProvider.addScope('user_birthday');
+fbAuthProvider.setCustomParameters({
+    display: 'popup',
+});
+
+// Google Auth provider config
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+googleAuthProvider.addScope(
+    'https://www.googleapis.com/auth/contacts.readonly'
+);
+googleAuthProvider.setCustomParameters({
+    login_hint: 'user@example.com',
+});
 export default firebaseApp;

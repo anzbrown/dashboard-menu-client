@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import PropTypes from 'prop-types';
-import { login, logout, signup, resetPassword } from './helper';
+import * as helpers from './helper';
 
 const AuthContext = React.createContext();
 
@@ -20,16 +20,13 @@ export function AuthProvider({ children }) {
         });
     }, []);
 
-    const value = {
+    const exports = {
+        ...helpers,
         currentUser,
-        signup,
-        login,
-        logout,
-        resetPassword,
     };
 
     return (
-        <AuthContext.Provider value={value}>
+        <AuthContext.Provider value={exports}>
             {!loading && children}
         </AuthContext.Provider>
     );

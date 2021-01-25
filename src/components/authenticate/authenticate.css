@@ -40,6 +40,14 @@ input:hover,
     opacity: 1;
 }
 
+.btn p {
+    display: inline-block;
+}
+
+.btn svg {
+    margin-right: 15px;
+}
+
 /* add appropriate colors to fb, twitter and google buttons */
 .fb {
     background-color: #3B5998;
@@ -117,6 +125,9 @@ input[type=submit]:hover {
     }
     /* hide the vertical line */
     .vl {
+        display: none;
+    }
+    .btn span {
         display: none;
     }
     /* show the hidden text on small screens */
