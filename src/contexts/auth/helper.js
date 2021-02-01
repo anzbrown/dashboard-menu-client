@@ -1,4 +1,4 @@
-import { auth, fbAuthProvider, googleAuthProvider } from '../firebase';
+import { auth, fbAuthProvider, googleAuthProvider } from '../../firebase';
 
 /**
  * firebase signup method
@@ -58,6 +58,14 @@ export async function updatePassword(password) {
 }
 
 /**
+ * retrieve JWT token for authentication
+ * @returns {Promise<string>}
+ */
+export async function getToken() {
+    return auth.currentUser.getIdToken();
+}
+
+/**
  * sign in with google account
  * @returns {Promise<firebase.auth.UserCredential>}
  */
@@ -71,8 +79,4 @@ export async function signInWithGoogle() {
  */
 export async function signInWithFb() {
     return auth.signInWithPopup(fbAuthProvider);
-}
-
-export async function getToken() {
-    return auth.currentUser.getIdToken();
 }

@@ -7,9 +7,16 @@ export function getInitialTheme() {
     document.documentElement.classList = initialTheme;
 }
 
+export function getTheme() {
+    return localStorage.getItem(THEME_KEY)
+        ? localStorage.getItem(THEME_KEY)
+        : themeDark;
+}
+
 export function toggleTheme() {
     const theme =
         localStorage.getItem(THEME_KEY) === themeDark ? themeLight : themeDark;
     localStorage.setItem(THEME_KEY, theme);
     document.documentElement.classList = theme;
+    return theme;
 }

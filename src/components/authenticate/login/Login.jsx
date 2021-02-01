@@ -2,60 +2,41 @@ import React, { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as icons from '@fortawesome/free-brands-svg-icons';
 import { Link, useHistory } from 'react-router-dom';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../../contexts/auth/AuthContext';
+import { useLoading } from '../../../contexts/loader/LoaderContext';
 import '../authenticate.css';
 
 export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
     const { login, signInWithGoogle, signInWithFb } = useAuth();
+    const { loading, setLoading } = useLoading();
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false);
     const history = useHistory();
 
-    function startLogin() {
-        setError('');
-        setLoading(true);
-    }
-
-    function redirectToDashboard() {
-        history.push('/');
-    }
-
-    async function handleSubmit(e) {
+    async function handleLogin(e) {
         e.preventDefault();
 
         try {
-            startLogin();
-            await login(emailRef.current.value, passwordRef.current.value);
-            redirectToDashboard();
-        } catch {
-            setError('Failed to log in');
-        }
-        setLoading(false);
-    }
-
-    async function signInFb(e) {
-        e.preventDefault();
-
-        try {
-            startLogin();
-            await signInWithFb();
-            redirectToDashboard();
+            setError('');
+            setLoading(true);
+            switch (e.currentTarget.id) {
+                case 'fb':
+                    await signInWithFb();
+                    break;
+                case 'google':
+                    await signInWithGoogle();
+                    break;
+                case 'twitter':
+                    break;
+                default:
+                    await login(
+                        emailRef.current.value,
+                        passwordRef.current.value
+                    );
+                    break;
+            }
             history.push('/');
-        } catch {
-            setError('Failed to log in');
-        }
-        setLoading(false);
-    }
-
-    async function signInGoogle(e) {
-        e.preventDefault();
-
-        try {
-            startLogin();
-            await signInWithGoogle();
-            redirectToDashboard();
         } catch {
             setError('Failed to log in');
         }
@@ -73,20 +54,26 @@ export default function Login() {
                 <div className="col">
                     <a
                         href="#"
+                        id="fb"
                         className="fb btn center-text"
-                        onClick={signInFb}
+                        onClick={handleLogin}
                     >
                         <FontAwesomeIcon icon={icons['faFacebookF']} />
                         <span>Login with Facebook</span>
                     </a>
-                    <a href="#" className="twitter btn center-text">
+                    <a
+                        href="#"
+                        id="twitter"
+                        className="twitter btn center-text"
+                    >
                         <FontAwesomeIcon icon={icons['faTwitter']} />
                         <span>Login with Twitter</span>
                     </a>
                     <a
                         href="#"
+                        id="google"
                         className="google btn center-text"
-                        onClick={signInGoogle}
+                        onClick={handleLogin}
                     >
                         <FontAwesomeIcon icon={icons['faGoogle']} />
                         <span>Login with Google</span>
@@ -96,7 +83,7 @@ export default function Login() {
                     <div className="hide-md-lg">
                         <p>Or sign in manually:</p>
                     </div>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleLogin}>
                         <input
                             placeholder="Email"
                             type="email"
@@ -106,6 +93,7 @@ export default function Login() {
                         <input
                             placeholder="Password"
                             type="password"
+                            autoComplete="true"
                             ref={passwordRef}
                             required
                         />

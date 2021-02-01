@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../../contexts/auth/AuthContext';
+import { useLoading } from '../../../contexts/loader/LoaderContext';
 import { Link, useHistory } from 'react-router-dom';
 
 export default function SignUp() {
@@ -8,7 +9,7 @@ export default function SignUp() {
     const passwordConfirmRef = useRef();
     const { signup } = useAuth();
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false);
+    const { loading, setLoading } = useLoading();
     const history = useHistory();
 
     async function handleSubmit(e) {

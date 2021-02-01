@@ -1,13 +1,14 @@
 import React, { useRef, useState } from 'react';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../../contexts/auth/AuthContext';
 import { Link } from 'react-router-dom';
+import { useLoading } from '../../../contexts/loader/LoaderContext';
 
 export default function ForgotPassword() {
     const emailRef = useRef();
     const { resetPassword } = useAuth();
+    const { loading, setLoading } = useLoading();
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
-    const [loading, setLoading] = useState(false);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -47,7 +48,7 @@ export default function ForgotPassword() {
                     <form onSubmit={handleSubmit}>
                         <input
                             type="email"
-                            ref={emailRef}
+                            autoComplete="true"
                             placeholder="Email"
                             required
                         />

@@ -1,16 +1,17 @@
 dispatch:
-  - url: "dashboard-menu-service.ew.r.appspot.com/api/menu"
+  - url: "*/api/menu"
     service: snowflake-menu-service
-  # GCP generated hostname defaults to client react app
-  - url: "dashboard-menu-service.ew.r.appspot.com/*"
+  - url: "*/api/health"
+    service: snowflake-menu-service
+  - url: "*/*"
     service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/web/*"
+  - url: "*/web/*"
     service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/static/*"
+  - url: "*/static/*"
     service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/favicon.ico"
+  - url: "*/favicon.ico"
     service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/manifest.json"
+  - url: "*/manifest.json"
     service: snowflake-client
-  - url: "dashboard-menu-service.ew.r.appspot.com/logo*"
+  - url: "*/logo*"
     service: snowflake-client

@@ -1,18 +1,22 @@
 import React, { useEffect, useReducer } from 'react';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../../contexts/auth/AuthContext';
 import { initialState, reducer } from './reducer';
 import { getMenuConfiguration } from './helper';
 import ListItem from './list-item/ListItem';
 import ListHeader from './list-header/ListHeader';
 import ListFooter from './list-footer/ListFooter';
 import './Sidebar.css';
+import { useLoading } from '../../../contexts/loader/LoaderContext';
 
 export default function Sidebar() {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { currentUser, getToken } = useAuth();
+    const { setLoading } = useLoading();
 
-    useEffect(() => {
-        getMenuConfiguration(dispatch, currentUser, getToken);
+    useEffect(async () => {
+        setLoading(true);
+        await getMenuConfiguration(dispatch, currentUser, getToken);
+        setLoading(false);
     }, []);
 
     return (

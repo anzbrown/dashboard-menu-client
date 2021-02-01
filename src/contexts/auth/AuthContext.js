@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
 import * as helpers from './helper';
 

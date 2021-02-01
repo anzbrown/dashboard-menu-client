@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
-import { toggleTheme } from '../../../../helper';
+import {
+    faAngleDoubleRight,
+    faMoon,
+    faSun,
+} from '@fortawesome/free-solid-svg-icons';
+import { getTheme, toggleTheme } from '../../../../helper';
 import './ListHeader.css';
-import { useAuth } from '../../../../contexts/AuthContext';
 
 export default function ListHeader() {
-    const { currentUser } = useAuth();
+    const [theme, setTheme] = useState(getTheme());
+
+    async function handleThemeChange() {
+        return setTheme(toggleTheme());
+    }
+
     return (
-        <li className="nav-header" onClick={toggleTheme}>
+        <li className="nav-header" onClick={handleThemeChange}>
             <span className="header-link nav-header-item">
-                <span className="header-text">{currentUser.email}</span>
+                <span className="header-text">
+                    <FontAwesomeIcon
+                        icon={theme === 'dark-theme' ? faSun : faMoon}
+                    />
+                </span>
                 <FontAwesomeIcon icon={faAngleDoubleRight} />
             </span>
         </li>
