@@ -72,3 +72,7 @@ export async function signInWithGoogle() {
 export async function signInWithFb() {
     return auth.signInWithPopup(fbAuthProvider);
 }
+
+export async function getToken() {
+    return auth.currentUser.getIdToken();
+}

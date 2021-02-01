@@ -9,10 +9,10 @@ import './Sidebar.css';
 
 export default function Sidebar() {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const { currentUser } = useAuth();
+    const { currentUser, getToken } = useAuth();
 
     useEffect(() => {
-        getMenuConfiguration(dispatch, currentUser);
+        getMenuConfiguration(dispatch, currentUser, getToken);
     }, []);
 
     return (
