@@ -1,16 +1,13 @@
 const [themeDark, themeLight] = ['dark-theme', 'light-theme'];
 const THEME_KEY = 'theme';
 
+export function getTheme() {
+    return localStorage.getItem(THEME_KEY) || themeDark;
+}
 export function getInitialTheme() {
-    const initialTheme = localStorage.getItem(THEME_KEY) || themeDark;
+    const initialTheme = getTheme();
     localStorage.setItem(THEME_KEY, initialTheme);
     document.documentElement.classList = initialTheme;
-}
-
-export function getTheme() {
-    return localStorage.getItem(THEME_KEY)
-        ? localStorage.getItem(THEME_KEY)
-        : themeDark;
 }
 
 export function toggleTheme() {
