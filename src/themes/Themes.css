@@ -15,12 +15,12 @@
 }
 
 .light-theme {
-  --text-primary: black;
-  --text-secondary: #ef6c23;
-  --text-tertiary: #ef9463;
-  --text--placeholder: #ffe2d3;
-  --bg-primary: #8c8c8c;
-  --bg-secondary: #606060;
-  --bg-main: #dddddd;
-  --scroll-bar-thumb: #ef6c23;
+  --text-primary: #000f1d;
+  --text-secondary: #002946;
+  --text-tertiary: #084470;
+  --text--placeholder: #0ab9db;
+  --bg-primary: #e0f4ff;
+  --bg-secondary: #b8dcfa;
+  --bg-main: #8ec4f1;
+  --scroll-bar-thumb: #002946;
 }

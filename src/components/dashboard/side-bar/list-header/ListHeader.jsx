@@ -5,7 +5,7 @@ import {
     faMoon,
     faSun,
 } from '@fortawesome/free-solid-svg-icons';
-import { getTheme, toggleTheme } from '../../../../helper';
+import { getTheme, toggleTheme } from '../../../../themes/helper';
 import './ListHeader.css';
 
 export default function ListHeader() {
